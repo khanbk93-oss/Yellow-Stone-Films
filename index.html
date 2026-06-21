@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yellowstone Films</title>
-<!-- v11 -->
+<!-- v12 -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -541,10 +541,13 @@
       display: flex;
       flex-direction: column;
       border: 0.5px solid var(--border);
-      overflow: hidden;
       transition: border-color 0.25s;
     }
     .video-card:hover { border-color: var(--gold); }
+    .video-card-video-wrap {
+      position: relative;
+      overflow: hidden;
+    }
     .video-card video {
       width: 100%;
       aspect-ratio: 9/16;
@@ -582,7 +585,7 @@
 
     <!-- 1. Thums Up × LBB -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/thumbsup-lbb.mp4" type="video/mp4">
         </video>
@@ -597,7 +600,7 @@
 
     <!-- 2. India in Venice × Schbang -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/india-in-venice-glimpses.mp4" type="video/mp4">
         </video>
@@ -612,7 +615,7 @@
 
     <!-- 3. Serendipity × Schbang × India in Venice -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/serendipity-venice-conservatorio.mp4" type="video/mp4">
         </video>
@@ -627,7 +630,7 @@
 
     <!-- 4. Nespresso × LBB -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/nespresso-lbb.mp4" type="video/mp4">
         </video>
@@ -642,7 +645,7 @@
 
     <!-- 5. Don Julio × LBB -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/donjulio-lbb.mp4" type="video/mp4">
         </video>
@@ -657,7 +660,7 @@
 
     <!-- 6. Zoya × LBB -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/zoya-lbb.mp4" type="video/mp4">
         </video>
@@ -672,7 +675,7 @@
 
     <!-- 7. India Cocktail Week × LBB -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/icw-lbb.mp4" type="video/mp4">
         </video>
@@ -687,7 +690,7 @@
 
     <!-- 8. Schbang × Indriya Jewellers -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/indriya-kathak-schbang.mp4" type="video/mp4">
         </video>
@@ -702,7 +705,7 @@
 
     <!-- 9. Explorers Club × Aniket Pratab Films -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/explorers-club-aniket.mp4" type="video/mp4">
         </video>
@@ -717,7 +720,7 @@
 
     <!-- 10. Hindustan Zinc × Aniket Pratab Films (YouTube) -->
     <a class="video-card" href="https://youtu.be/tpzRKFTIYjw" target="_blank" style="text-decoration:none;color:inherit;">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <div style="aspect-ratio:9/16;overflow:hidden;background:#111;position:relative;">
           <img src="https://img.youtube.com/vi/tpzRKFTIYjw/hqdefault.jpg" alt="Hindustan Zinc" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
@@ -737,7 +740,7 @@
 
     <!-- 11. India in Venice × Schbang (Voices) -->
     <div class="video-card">
-      <div style="position:relative;">
+      <div class="video-card-video-wrap">
         <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
           <source src="videos/india-in-venice-voices.mp4" type="video/mp4">
         </video>
