@@ -1,3 +1,15 @@
+Got it! I have adjusted the **Team** section so it is perfectly stacked with "Basit Khan" on top and "TJ" right below it, with absolutely no other words or boxes around them. It sits perfectly above the "About" section.
+
+Here is the fully updated code.
+
+### To fix the old site loading issue:
+
+1. Open your `index.html` file in Notepad or VS Code again.
+2. Delete everything and paste this entire block of code below.
+3. Save the file (`Ctrl + S`).
+4. Go to your browser and press **`Ctrl + F5`** (or `Ctrl + Shift + R`). This forces the browser to dump the old memory and load the fresh code.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -322,51 +334,6 @@
     margin-top: auto;
   }
 
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
-  }
-
-  .about-text p strong {
-    color: var(--white);
-    font-weight: 400;
-  }
-
-  .about-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .highlight-item {
-    padding: 1.5rem;
-    border: 0.5px solid var(--border);
-    border-left: 2px solid var(--gold);
-  }
-
-  .highlight-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 0.4rem;
-  }
-
-  .highlight-sub {
-    font-size: 0.78rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
   /* CONTACT */
   .contact-inner {
     max-width: 640px;
@@ -433,7 +400,6 @@
     .hero-stats { gap: 2rem; }
     .featured-project { grid-template-columns: 1fr; gap: 2rem; }
     .projects-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     footer { padding: 2rem 1.5rem; }
   }
 </style>
@@ -446,13 +412,12 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#brand-films">Films</a></li>
     <li><a href="#art">Art &amp; Culture</a></li>
-    <li><a href="#behance">More</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <p class="hero-eyebrow">Yellowstone Films · New Delhi · Production House</p>
@@ -474,7 +439,6 @@
   </div>
 </section>
 
-<!-- FEATURED WORK -->
 <section id="work">
   <div class="section-header">
     <span class="section-num">01</span>
@@ -482,7 +446,6 @@
     <div class="section-line"></div>
   </div>
 
-  <!-- Wim Wenders -->
   <div class="featured-project">
     <div>
       <span class="featured-tag">Documentary / Direction</span>
@@ -499,7 +462,6 @@
     </div>
   </div>
 
-  <!-- India Art Fair -->
   <div class="featured-project">
     <div class="featured-visual" style="padding:0;overflow:hidden;">
       <img src="https://mir-s3-cdn-cf.behance.net/projects/404/47b31f190602819.Y3JvcCwxMDgxLDg0NSwwLDExMg.jpg" alt="India Art Fair" style="width:100%;height:100%;object-fit:cover;">
@@ -525,7 +487,6 @@
 
 </section>
 
-<!-- BRAND & EVENT FILMS -->
 <section id="brand-films">
   <div class="section-header">
     <span class="section-num">02</span>
@@ -585,9 +546,8 @@
 
   <div class="video-grid">
 
-    <!-- 1. Thums Up × LBB -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/thumbsup-lbb.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -597,9 +557,8 @@
       </div>
     </div>
 
-    <!-- 2. India in Venice × Schbang -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/india-in-venice-glimpses.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -609,9 +568,8 @@
       </div>
     </div>
 
-    <!-- 3. Serendipity × Schbang × India in Venice -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/serendipity-venice-conservatorio.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -621,9 +579,8 @@
       </div>
     </div>
 
-    <!-- 4. Nespresso × LBB -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/nespresso-lbb.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -633,9 +590,8 @@
       </div>
     </div>
 
-    <!-- 5. Don Julio × LBB -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/donjulio-lbb.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -645,9 +601,8 @@
       </div>
     </div>
 
-    <!-- 6. Zoya × LBB -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/zoya-lbb.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -657,9 +612,8 @@
       </div>
     </div>
 
-    <!-- 7. India Cocktail Week × LBB -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/icw-lbb.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -669,9 +623,8 @@
       </div>
     </div>
 
-    <!-- 8. Schbang × Indriya Jewellers -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/indriya-kathak-schbang.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -681,9 +634,8 @@
       </div>
     </div>
 
-    <!-- 9. Explorers Club × Aniket Pratab Films -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/explorers-club-aniket.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -693,7 +645,6 @@
       </div>
     </div>
 
-    <!-- 10. Hindustan Zinc × Aniket Pratab Films (YouTube) -->
     <a class="video-card" href="https://youtu.be/tpzRKFTIYjw" target="_blank" style="text-decoration:none;color:inherit;">
       <div style="aspect-ratio:9/16;overflow:hidden;background:#111;position:relative;">
         <img src="https://img.youtube.com/vi/tpzRKFTIYjw/hqdefault.jpg" alt="Hindustan Zinc" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -710,9 +661,8 @@
       </div>
     </a>
 
-    <!-- 11. India in Venice × Schbang (Voices) -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+      <video controls playsinline preload="metadata">
         <source src="videos/india-in-venice-voices.mp4" type="video/mp4">
       </video>
       <div class="video-card-info">
@@ -725,7 +675,6 @@
   </div>
 </section>
 
-<!-- ART & CULTURE -->
 <section id="art">
   <div class="section-header">
     <span class="section-num">03</span>
@@ -778,118 +727,6 @@
   </div>
 </section>
 
-<!-- BEHANCE PROJECTS -->
-<section id="behance">
-  <div class="section-header">
-    <span class="section-num">03</span>
-    <h2 class="section-title">More Projects</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="projects-grid">
-    <a class="project-card" href="https://www.behance.net/gallery/239696969/Gallerie-Splash" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/1df9d2239696969.692efbc2a1ecb.jpg" alt="Gallerie Splash" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Exhibition / Photography</span>
-      <h3 class="project-card-title">Gallerie Splash</h3>
-      <p class="project-card-desc">Visual documentation of Gallerie Splash — photography and coverage of the exhibition space and its works.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/215582493/Beyond-Desings-and-Rado" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/4495b9215582493.Y3JvcCwxMDUwLDgyMSwzOCwzNTg.jpg" alt="Beyond Designs and Rado" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Luxury Brand</span>
-      <h3 class="project-card-title">Beyond Designs &amp; Rado</h3>
-      <p class="project-card-desc">Photography collaboration with Beyond Designs and Swiss luxury watch brand Rado — fashion meets precision.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/191070717/BMW-Photoshoot-IAF" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/999fce191070717.Y3JvcCwxMTI1LDg3OSwwLDI1.jpg" alt="BMW Photoshoot IAF" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Automotive / Brand</span>
-      <h3 class="project-card-title">BMW Photoshoot — India Art Fair</h3>
-      <p class="project-card-desc">Brand photography for BMW at India Art Fair — luxury automotive meets India's leading contemporary art platform.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/215586305/NDTV-World-Summit" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/bfdb1c215586305.Y3JvcCw2NTMsNTEwLDYyNSwzNQ.jpeg" alt="NDTV World Summit" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Media / Event</span>
-      <h3 class="project-card-title">NDTV World Summit</h3>
-      <p class="project-card-desc">Photography and visual coverage for the NDTV World Summit — one of India's most watched media and policy events.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/250797237/Moscow-India-Business-Delegation-meet" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/3a96b4250797237.Y3JvcCwzNjIwLDI4MzIsMzEzLDA.jpg" alt="Moscow India Business Delegation" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Diplomatic / Event</span>
-      <h3 class="project-card-title">Moscow–India Business Delegation</h3>
-      <p class="project-card-desc">Official photography for the Moscow–India Business Delegation meet — diplomatic and corporate visual documentation.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/248229233/The-KILA" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/26cdc1248229233.Y3JvcCwzNjIwLDI4MzIsMzEzLDA.jpg" alt="The KILA" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Heritage / Location</span>
-      <h3 class="project-card-title">The KILA</h3>
-      <p class="project-card-desc">Visual storytelling at The KILA — photography capturing the spirit of one of Delhi's iconic heritage spaces.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/215579917/Habibnama-by-Danish-Hussain-and-Sohail-Hashmi" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/d586b2215579917.Y3JvcCwyNTI2LDE5NzUsNTEyLDA.jpeg" alt="Habibnama" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Theatre / Urdu Literature</span>
-      <h3 class="project-card-title">Habibnama — Danish Hussain &amp; Sohail Hashmi</h3>
-      <p class="project-card-desc">Film and photography for Habibnama — a theatrical tribute to Habib Jalib, performed by Danish Hussain and Sohail Hashmi.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/215748473/India-International-Coffee-Festival" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/20eda7215748473.6772e6c29abe9.jpg" alt="India International Coffee Festival" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Food &amp; Culture / Event</span>
-      <h3 class="project-card-title">India International Coffee Festival</h3>
-      <p class="project-card-desc">Visual coverage of the India International Coffee Festival — capturing craft, community, and the culture of coffee.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/215595927/Equality-Now-Book-Launch" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/8cedd9215595927.Y3JvcCwxMjk5LDEwMTYsMCw0OA.jpeg" alt="Equality Now Book Launch" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">NGO / Publishing</span>
-      <h3 class="project-card-title">Equality Now — Book Launch</h3>
-      <p class="project-card-desc">Photography for the Equality Now book launch — visual documentation for an international human rights organisation.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-
-    <a class="project-card" href="https://www.behance.net/gallery/216821939/Art-Works" target="_blank">
-      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/a2b50b216821939.Y3JvcCw4MDgsNjMyLDAsMjQy.jpg" alt="Art Works" style="width:100%;height:100%;object-fit:cover;display:block;" referrerpolicy="no-referrer">
-      </div>
-      <span class="project-card-tag">Art / Photography</span>
-      <h3 class="project-card-title">Art Works</h3>
-      <p class="project-card-desc">A personal series of art photography — images that exist outside commission, driven by curiosity and eye.</p>
-      <span class="project-card-arrow">↗ View on Behance</span>
-    </a>
-  </div>
-</section>
-
-<!-- SOCIAL & NGO -->
 <section>
   <div class="section-header">
     <span class="section-num">04</span>
@@ -928,53 +765,74 @@
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<section id="team">
   <div class="section-header">
     <span class="section-num">05</span>
+    <h2 class="section-title">Team</h2>
+    <div class="section-line"></div>
+  </div>
+  
+  <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300;">Basit Khan</div>
+    <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300;">TJ</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-header">
+    <span class="section-num">06</span>
     <h2 class="section-title">About</h2>
     <div class="section-line"></div>
   </div>
 
-  <div class="about-grid">
-    <div class="about-text">
-      <p><strong>Yellowstone Films</strong> is a Delhi-based production house specialising in large-scale events, documentaries, brand films, and cultural storytelling across India and internationally.</p>
-      <p>A trusted collaborator to <strong>international NGOs, cultural institutions, and global brands</strong> — known for delivering end-to-end production management, visual storytelling, and seamless client liaison.</p>
-      <p>Adept at managing pre- to post-production workflows, on-ground execution, and cross-functional team coordination in fast-paced, multicultural environments. Holds an <strong>M.A. in Mass Communication & Filmmaking</strong> from AJK MCRC, Jamia Millia Islamia.</p>
-      <p>Recognised by the <strong>Youth Ki Awaz Citizen Journalist Fellowship</strong> and supported by <strong>UNDP</strong> through the Asia Pacific Youth Exchange Program. Former Sub-Editor at <strong>The Indian Express</strong>.</p>
-    </div>
-    <div class="about-highlights">
-      <div class="highlight-item">
-        <h4 class="highlight-title">Team — Basit Khan &amp; TJ</h4>
-        <p class="highlight-sub">Producer &amp; Director of Photography</p>
-      </div>
-    </div>
+  <div style="max-width: 800px;">
+    <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem;"><strong>Yellowstone Films</strong> is a Delhi-based production house specialising in large-scale events, documentaries, brand films, and cultural storytelling across India and internationally.</p>
+    <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem;">A trusted collaborator to <strong>international NGOs, cultural institutions, and global brands</strong> — known for delivering end-to-end production management, visual storytelling, and seamless client liaison.</p>
+    <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem;">Adept at managing pre- to post-production workflows, on-ground execution, and cross-functional team coordination in fast-paced, multicultural environments. Holds an <strong>M.A. in Mass Communication & Filmmaking</strong> from AJK MCRC, Jamia Millia Islamia.</p>
+    <p style="font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem;">Recognised by the <strong>Youth Ki Awaz Citizen Journalist Fellowship</strong> and supported by <strong>UNDP</strong> through the Asia Pacific Youth Exchange Program. Former Sub-Editor at <strong>The Indian Express</strong>.</p>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="section-header">
-    <span class="section-num">06</span>
+    <span class="section-num">07</span>
     <h2 class="section-title">Get in Touch</h2>
     <div class="section-line"></div>
   </div>
   <div class="contact-inner">
     <div class="contact-links">
-      <a class="contact-link" href="mailto:Basitlk98@gmail.com">
-        <span style="display:flex;align-items:center;gap:0.6rem;">
-          <span style="color:var(--gold);font-size:1rem;">✉</span>
-          Basitlk98@gmail.com
+      
+      <div class="contact-link" style="pointer-events: none;">
+        <span style="display:flex;align-items:center;gap:0.8rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          Basit Khan
         </span>
-        <span>↗</span>
-      </a>
+      </div>
+      
       <a class="contact-link" href="tel:+917889379159">
-        <span style="display:flex;align-items:center;gap:0.6rem;">
-          <span style="color:var(--gold);font-size:1rem;">✆</span>
+        <span style="display:flex;align-items:center;gap:0.8rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
           +91 78893 79159
         </span>
         <span>↗</span>
       </a>
+      
+      <a class="contact-link" href="mailto:Basitlk98@gmail.com">
+        <span style="display:flex;align-items:center;gap:0.8rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Basitlk98@gmail.com
+        </span>
+        <span>↗</span>
+      </a>
+
     </div>
   </div>
 </section>
@@ -986,3 +844,5 @@
 
 </body>
 </html>
+
+```
