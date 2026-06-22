@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yellowstone Films</title>
-<!-- v25 -->
+<!-- v26 -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -270,6 +270,13 @@
     letter-spacing: 0.15em;
     color: var(--muted);
     text-transform: uppercase;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 768px) {
+    .featured-grid { grid-template-columns: 1fr !important; }
   }
 
   /* GRID PROJECTS */
@@ -546,7 +553,7 @@
     <div class="section-line"></div>
   </div>
 
-  <div class="projects-grid" style="grid-template-columns: repeat(2, 1fr);">
+  <div class="projects-grid featured-grid">
 
     <!-- Wim Wenders -->
     <a class="project-card" href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank">
