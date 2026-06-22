@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yellowstone Films</title>
-<!-- v12 -->
+<!-- v13 -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -546,7 +546,25 @@
     .video-card:hover { border-color: var(--gold); }
     .video-card-video-wrap {
       position: relative;
+      aspect-ratio: 9/16;
       overflow: hidden;
+    }
+    .brand-thumb {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+    }
+    .brand-thumb-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 0 1rem;
     }
     .video-card video {
       width: 100%;
@@ -586,10 +604,12 @@
     <!-- 1. Thums Up × LBB -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#e31837;">
+          <span class="brand-thumb-name">Thums Up</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/thumbsup-lbb.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Thums Up</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Thums Up × LBB</span>
@@ -601,10 +621,12 @@
     <!-- 2. India in Venice × Schbang -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#1a3a5c;">
+          <span class="brand-thumb-name">India in Venice</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/india-in-venice-glimpses.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>India in Venice</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × India in Venice</span>
@@ -613,13 +635,15 @@
       </div>
     </div>
 
-    <!-- 3. Serendipity × Schbang × India in Venice -->
+    <!-- 3. Serendipity Arts -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#c8102e;">
+          <span class="brand-thumb-name">Serendipity Arts</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/serendipity-venice-conservatorio.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Serendipity Arts</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × Serendipity Arts Festival × India in Venice</span>
@@ -628,13 +652,15 @@
       </div>
     </div>
 
-    <!-- 4. Nespresso × LBB -->
+    <!-- 4. Nespresso -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#1a1a1a;">
+          <span class="brand-thumb-name" style="color:#c8a96e;">Nespresso</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/nespresso-lbb.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Nespresso</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Nespresso × LBB</span>
@@ -643,13 +669,15 @@
       </div>
     </div>
 
-    <!-- 5. Don Julio × LBB -->
+    <!-- 5. Don Julio -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#1c3d6e;">
+          <span class="brand-thumb-name" style="color:#d4af6a;">Don Julio</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/donjulio-lbb.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Don Julio</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Don Julio × LBB</span>
@@ -658,13 +686,15 @@
       </div>
     </div>
 
-    <!-- 6. Zoya × LBB -->
+    <!-- 6. Zoya -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#2c2c2c;">
+          <span class="brand-thumb-name" style="color:#e8c97e;">Zoya</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/zoya-lbb.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Zoya</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Zoya × LBB</span>
@@ -673,13 +703,15 @@
       </div>
     </div>
 
-    <!-- 7. India Cocktail Week × LBB -->
+    <!-- 7. India Cocktail Week -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#2d4a22;">
+          <span class="brand-thumb-name">India Cocktail Week</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/icw-lbb.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>India Cocktail Week</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">India Cocktail Week × LBB</span>
@@ -688,13 +720,15 @@
       </div>
     </div>
 
-    <!-- 8. Schbang × Indriya Jewellers -->
+    <!-- 8. Indriya Jewellers -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#5c1a2e;">
+          <span class="brand-thumb-name" style="color:#e8c97e;">Indriya Jewellers</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/indriya-kathak-schbang.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Indriya Jewellers</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × Indriya Jewellers</span>
@@ -703,13 +737,15 @@
       </div>
     </div>
 
-    <!-- 9. Explorers Club × Aniket Pratab Films -->
+    <!-- 9. Explorers Club -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#1a2a1a;">
+          <span class="brand-thumb-name" style="color:#a8c878;">Explorers Club</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/explorers-club-aniket.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>Explorers Club</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Explorers Club × Aniket Pratab Films</span>
@@ -718,10 +754,13 @@
       </div>
     </div>
 
-    <!-- 10. Hindustan Zinc × Aniket Pratab Films (YouTube) -->
+    <!-- 10. Hindustan Zinc -->
     <a class="video-card" href="https://youtu.be/tpzRKFTIYjw" target="_blank" style="text-decoration:none;color:inherit;">
       <div class="video-card-video-wrap">
-        <div style="aspect-ratio:9/16;overflow:hidden;background:#111;position:relative;">
+        <div class="brand-thumb" style="background:#003f7f;">
+          <span class="brand-thumb-name">Hindustan Zinc</span>
+        </div>
+        <div style="position:absolute;inset:0;">
           <img src="https://img.youtube.com/vi/tpzRKFTIYjw/hqdefault.jpg" alt="Hindustan Zinc" style="width:100%;height:100%;object-fit:cover;display:block;">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
             <div style="width:48px;height:48px;background:rgba(184,150,90,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;">
@@ -729,7 +768,6 @@
             </div>
           </div>
         </div>
-        <div class="video-brand-overlay"><span>Hindustan Zinc</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Hindustan Zinc × Aniket Pratab Films</span>
@@ -738,13 +776,15 @@
       </div>
     </a>
 
-    <!-- 11. India in Venice × Schbang (Voices) -->
+    <!-- 11. India in Venice (Voices) -->
     <div class="video-card">
       <div class="video-card-video-wrap">
-        <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
+        <div class="brand-thumb" style="background:#1a3a5c;">
+          <span class="brand-thumb-name">India in Venice</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
           <source src="videos/india-in-venice-voices.mp4" type="video/mp4">
         </video>
-        <div class="video-brand-overlay"><span>India in Venice</span></div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × India in Venice</span>
