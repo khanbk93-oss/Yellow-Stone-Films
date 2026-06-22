@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yellowstone Films</title>
-<!-- v16 -->
+<!-- v17 -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -681,6 +681,7 @@
       <div class="video-card-video-wrap">
         <div class="brand-thumb" style="background:#1a1a1a;">
           <span class="brand-thumb-name" style="color:#c8a96e;">Nespresso</span>
+          <div class="brand-thumb-play" onclick="var v=this.closest('.video-card-video-wrap').querySelector('video');v.style.display='block';v.play();this.closest('.brand-thumb').style.display='none';"></div>
         </div>
         <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2;" onplay="this.style.display='block';this.parentElement.querySelector('.brand-thumb').style.display='none';">
           <source src="videos/nespresso-lbb.mp4" type="video/mp4">
@@ -698,6 +699,7 @@
       <div class="video-card-video-wrap">
         <div class="brand-thumb" style="background:#1c3d6e;">
           <span class="brand-thumb-name" style="color:#d4af6a;">Don Julio</span>
+          <div class="brand-thumb-play" onclick="var v=this.closest('.video-card-video-wrap').querySelector('video');v.style.display='block';v.play();this.closest('.brand-thumb').style.display='none';"></div>
         </div>
         <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2;" onplay="this.style.display='block';this.parentElement.querySelector('.brand-thumb').style.display='none';">
           <source src="videos/donjulio-lbb.mp4" type="video/mp4">
@@ -715,6 +717,7 @@
       <div class="video-card-video-wrap">
         <div class="brand-thumb" style="background:#2c2c2c;">
           <span class="brand-thumb-name" style="color:#e8c97e;">Zoya</span>
+          <div class="brand-thumb-play" onclick="var v=this.closest('.video-card-video-wrap').querySelector('video');v.style.display='block';v.play();this.closest('.brand-thumb').style.display='none';"></div>
         </div>
         <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2;" onplay="this.style.display='block';this.parentElement.querySelector('.brand-thumb').style.display='none';">
           <source src="videos/zoya-lbb.mp4" type="video/mp4">
@@ -750,6 +753,7 @@
       <div class="video-card-video-wrap">
         <div class="brand-thumb" style="background:#5c1a2e;">
           <span class="brand-thumb-name" style="color:#e8c97e;">Indriya Jewellers</span>
+          <div class="brand-thumb-play" onclick="var v=this.closest('.video-card-video-wrap').querySelector('video');v.style.display='block';v.play();this.closest('.brand-thumb').style.display='none';"></div>
         </div>
         <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2;" onplay="this.style.display='block';this.parentElement.querySelector('.brand-thumb').style.display='none';">
           <source src="videos/indriya-kathak-schbang.mp4" type="video/mp4">
@@ -767,6 +771,7 @@
       <div class="video-card-video-wrap">
         <div class="brand-thumb" style="background:#1a2a1a;">
           <span class="brand-thumb-name" style="color:#a8c878;">Explorers Club</span>
+          <div class="brand-thumb-play" onclick="var v=this.closest('.video-card-video-wrap').querySelector('video');v.style.display='block';v.play();this.closest('.brand-thumb').style.display='none';"></div>
         </div>
         <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;z-index:2;" onplay="this.style.display='block';this.parentElement.querySelector('.brand-thumb').style.display='none';">
           <source src="videos/explorers-club-aniket.mp4" type="video/mp4">
