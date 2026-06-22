@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yellowstone Films</title>
+<!-- v13 -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -425,8 +426,20 @@
     letter-spacing: 0.08em;
   }
 
-  @media (max-width: 900px) {
-    nav { padding: 1.25rem 1.5rem; }
+  .video-brand-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 100%);
+    padding: 2rem 1rem 0.75rem;
+    pointer-events: none;
+  }
+  .video-brand-overlay span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+  }
     .nav-links { display: none; }
     .hero { padding: 0 1.5rem 4rem; }
     section { padding: 4rem 1.5rem; }
@@ -482,45 +495,30 @@
     <div class="section-line"></div>
   </div>
 
-  <!-- Wim Wenders -->
-  <div class="featured-project">
-    <div>
-      <span class="featured-tag">Documentary / Direction</span>
-      <h3 class="featured-title">Wim Wenders — Delhi Tour Shoot</h3>
-      <p class="featured-desc">Behind-the-lens documentation of Oscar-nominated German director Wim Wenders during his tour of Delhi. A rare collaboration capturing the city through a cinematic legend's gaze.</p>
-      <div class="featured-links">
-        <a class="link-item" href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank">Reel 01 — Delhi Tour</a>
-        <a class="link-item" href="https://www.instagram.com/reel/DGah7TtIl8_/?igsh=NXplZWFrdmR2NHM=" target="_blank">Reel 02 — Delhi Tour</a>
-        <a class="link-item" href="https://www.instagram.com/reel/DGWAp9NoHwJ/?igsh=emQzM3oweHE3anU2" target="_blank">Reel 03 — Delhi Tour</a>
-      </div>
-    </div>
-    <div class="featured-visual" style="padding:0;overflow:hidden;">
-      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b5b077220643045.681bd9461bc0a.jpg" alt="Wim Wenders India Tour" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-  </div>
+  <div class="projects-grid">
 
-  <!-- India Art Fair -->
-  <div class="featured-project">
-    <div class="featured-visual" style="padding:0;overflow:hidden;">
-      <img src="https://mir-s3-cdn-cf.behance.net/projects/404/47b31f190602819.Y3JvcCwxMDgxLDg0NSwwLDExMg.jpg" alt="India Art Fair" style="width:100%;height:100%;object-fit:cover;">
-    </div>
-    <div>
-      <span class="featured-tag">Short Documentary Series</span>
-      <h3 class="featured-title">India Art Fair — Short Docu Films</h3>
-      <p class="featured-desc">A multi-part documentary series capturing the energy, artists, and conversations at India Art Fair — one of South Asia's most important contemporary art platforms.</p>
-      <div class="featured-links">
-        <a class="link-item" href="https://drive.google.com/file/d/1wI4q8vNbATjYDQXGHtv8wFIr0m9UzTYe/view" target="_blank">Film 01</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1U1szXtIl0ERLPWAPbTLQ_gvKhHbksm6V/view" target="_blank">Film 02</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1qo-IBoathM8ESWDGdazA3jYRUV2fmd5h/view" target="_blank">Film 03</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1BYMSmmZCgcyqQ9N-07lonhw0uqVdIHIY/view" target="_blank">Film 05</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1t8O2u8R12x5lSUPum8jaqbf-PL7aXUXG/view" target="_blank">Film 06</a>
-        <a class="link-item" href="https://drive.google.com/file/d/15HnorwwnoUNfaUQ7o17Rn51HOfhUkEIf/view" target="_blank">Film 07</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1IKKZhQny4cxCIODDSvgjjfv-RV51z62N/view" target="_blank">Film 08</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1dsvndsuuUG3BAgepAZlh7r-zNghHYFXM/view" target="_blank">Film 10</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1hoIiEdiI1latIoC-ShfGpVaZygfu8j7f/view" target="_blank">Film 11</a>
-        <a class="link-item" href="https://drive.google.com/file/d/1YI5YvPxO1aGYkW-Qovj9_YpjY4eoEPqd/view" target="_blank">Film 12</a>
+    <!-- Wim Wenders -->
+    <a class="project-card" href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank">
+      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/b5b077220643045.681bd9461bc0a.jpg" alt="Wim Wenders India Tour" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
-    </div>
+      <span class="project-card-tag">Documentary / Direction</span>
+      <h3 class="project-card-title">Wim Wenders — Delhi Tour Shoot</h3>
+      <p class="project-card-desc">Behind-the-lens documentation of Oscar-nominated German director Wim Wenders during his tour of Delhi.</p>
+      <span class="project-card-arrow">↗ View Reels</span>
+    </a>
+
+    <!-- India Art Fair -->
+    <a class="project-card" href="https://drive.google.com/file/d/1wI4q8vNbATjYDQXGHtv8wFIr0m9UzTYe/view" target="_blank">
+      <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
+        <img src="https://mir-s3-cdn-cf.behance.net/projects/404/47b31f190602819.Y3JvcCwxMDgxLDg0NSwwLDExMg.jpg" alt="India Art Fair" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <span class="project-card-tag">Short Documentary Series</span>
+      <h3 class="project-card-title">India Art Fair — Short Docu Films</h3>
+      <p class="project-card-desc">A multi-part documentary series capturing the energy, artists, and conversations at India Art Fair.</p>
+      <span class="project-card-arrow">↗ View Films</span>
+    </a>
+
   </div>
 
 </section>
@@ -543,10 +541,31 @@
       display: flex;
       flex-direction: column;
       border: 0.5px solid var(--border);
-      overflow: hidden;
       transition: border-color 0.25s;
     }
     .video-card:hover { border-color: var(--gold); }
+    .video-card-video-wrap {
+      position: relative;
+      aspect-ratio: 9/16;
+      overflow: hidden;
+    }
+    .brand-thumb {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+    }
+    .brand-thumb-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 0 1rem;
+    }
     .video-card video {
       width: 100%;
       aspect-ratio: 9/16;
@@ -578,147 +597,199 @@
       letter-spacing: 0.05em;
       margin-top: 0.25rem;
     }
-    @media (max-width: 900px) {
-      .video-grid { grid-template-columns: 1fr; }
-    }
   </style>
 
   <div class="video-grid">
 
     <!-- 1. Thums Up × LBB -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/thumbsup-lbb.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#e31837;">
+          <span class="brand-thumb-name">Thums Up</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/thumbsup-lbb.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Thums Up × LBB</span>
         <h3 class="video-card-title">Toofani Biryani Evening</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
     <!-- 2. India in Venice × Schbang -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/india-in-venice-glimpses.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#1a3a5c;">
+          <span class="brand-thumb-name">India in Venice</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/india-in-venice-glimpses.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × India in Venice</span>
         <h3 class="video-card-title">National Pavilion of India — La Biennale di Venezia</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 3. Serendipity × Schbang × India in Venice -->
+    <!-- 3. Serendipity Arts -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/serendipity-venice-conservatorio.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#c8102e;">
+          <span class="brand-thumb-name">Serendipity Arts</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/serendipity-venice-conservatorio.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × Serendipity Arts Festival × India in Venice</span>
         <h3 class="video-card-title">Conservatorio Benedetto Marcello — Opening Soirée</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 4. Nespresso × LBB -->
+    <!-- 4. Nespresso -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/nespresso-lbb.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#1a1a1a;">
+          <span class="brand-thumb-name" style="color:#c8a96e;">Nespresso</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/nespresso-lbb.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Nespresso × LBB</span>
         <h3 class="video-card-title">Nespresso Arrives at Select City Walk, Delhi</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 5. Don Julio × LBB -->
+    <!-- 5. Don Julio -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/donjulio-lbb.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#1c3d6e;">
+          <span class="brand-thumb-name" style="color:#d4af6a;">Don Julio</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/donjulio-lbb.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Don Julio × LBB</span>
         <h3 class="video-card-title">A Night to Remember — Cinco de Mayo with Don Julio</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 6. Zoya × LBB -->
+    <!-- 6. Zoya -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/zoya-lbb.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#2c2c2c;">
+          <span class="brand-thumb-name" style="color:#e8c97e;">Zoya</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/zoya-lbb.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Zoya × LBB</span>
         <h3 class="video-card-title">Two Distinct Styles, One Shared Spirit</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 7. India Cocktail Week × LBB -->
+    <!-- 7. India Cocktail Week -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/icw-lbb.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#2d4a22;">
+          <span class="brand-thumb-name">India Cocktail Week</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/icw-lbb.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">India Cocktail Week × LBB</span>
         <h3 class="video-card-title">ICW 2025 — Come Alive with Blossoms</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 8. Schbang × Indriya Jewellers -->
+    <!-- 8. Indriya Jewellers -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/indriya-kathak-schbang.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#5c1a2e;">
+          <span class="brand-thumb-name" style="color:#e8c97e;">Indriya Jewellers</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/indriya-kathak-schbang.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × Indriya Jewellers</span>
         <h3 class="video-card-title">The Poetry of Kathak</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 9. Explorers Club × Aniket Pratab Films -->
+    <!-- 9. Explorers Club -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/explorers-club-aniket.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#1a2a1a;">
+          <span class="brand-thumb-name" style="color:#a8c878;">Explorers Club</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/explorers-club-aniket.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Explorers Club × Aniket Pratab Films</span>
         <h3 class="video-card-title">The Surreal World of Explorers Club</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
-    <!-- 10. Hindustan Zinc × Aniket Pratab Films (YouTube) -->
+    <!-- 10. Hindustan Zinc -->
     <a class="video-card" href="https://youtu.be/tpzRKFTIYjw" target="_blank" style="text-decoration:none;color:inherit;">
-      <div style="aspect-ratio:9/16;overflow:hidden;background:#111;position:relative;">
-        <img src="https://img.youtube.com/vi/tpzRKFTIYjw/hqdefault.jpg" alt="Hindustan Zinc" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <div style="width:48px;height:48px;background:rgba(184,150,90,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-            <span style="color:#0a0a0a;font-size:1.2rem;margin-left:4px;">▶</span>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#003f7f;">
+          <span class="brand-thumb-name">Hindustan Zinc</span>
+        </div>
+        <div style="position:absolute;inset:0;">
+          <img src="https://img.youtube.com/vi/tpzRKFTIYjw/hqdefault.jpg" alt="Hindustan Zinc" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
+            <div style="width:48px;height:48px;background:rgba(184,150,90,0.85);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <span style="color:#0a0a0a;font-size:1.2rem;margin-left:4px;">▶</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="video-card-info">
         <span class="video-card-collab">Hindustan Zinc × Aniket Pratab Films</span>
         <h3 class="video-card-title">Women in Mining — Beyond the Textbook</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </a>
 
-    <!-- 11. India in Venice × Schbang (Voices) -->
+    <!-- 11. India in Venice (Voices) -->
     <div class="video-card">
-      <video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;object-fit:cover;display:block;background:#111;">
-        <source src="videos/india-in-venice-voices.mp4" type="video/mp4">
-      </video>
+      <div class="video-card-video-wrap">
+        <div class="brand-thumb" style="background:#1a3a5c;">
+          <span class="brand-thumb-name">India in Venice</span>
+        </div>
+        <video controls playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+          <source src="videos/india-in-venice-voices.mp4" type="video/mp4">
+        </video>
+      </div>
       <div class="video-card-info">
         <span class="video-card-collab">Schbang × India in Venice</span>
         <h3 class="video-card-title">Voices at the National Pavilion — La Biennale di Venezia</h3>
-        <p class="video-card-dop">DOP: Tjay</p>
+        <p class="video-card-dop">DOP: TJ</p>
       </div>
     </div>
 
@@ -918,6 +989,13 @@
       <p class="project-card-desc">Portrait photography celebrating identity, pride, and beauty — a photoshoot for Miss India Trans.</p>
       <span class="project-card-arrow">↗ View Gallery</span>
     </a>
+
+    <a class="project-card" href="https://docs.google.com/document/d/1t7hH-MGhwRaXIHwxefaOBz4X6LMLCs6G/edit" target="_blank">
+      <span class="project-card-tag">Journalism</span>
+      <h3 class="project-card-title">Journalism &amp; Media Coverage</h3>
+      <p class="project-card-desc">A body of journalistic work spanning media coverage, reporting, and editorial — rooted in years at The Indian Express and beyond.</p>
+      <span class="project-card-arrow">↗ View</span>
+    </a>
   </div>
 </section>
 
@@ -931,28 +1009,16 @@
 
   <div class="about-grid">
     <div class="about-text">
-      <p><strong>Basit Latif Khan</strong> is a Delhi-based Freelance Producer, Photographer, and Documentary Filmmaker specialising in large-scale events and festivals across India.</p>
+      <p><strong>Yellowstone Films</strong> is a Delhi-based production house specialising in large-scale events, documentaries, brand films, and cultural storytelling across India and internationally.</p>
       <p>A trusted collaborator to <strong>international NGOs, cultural institutions, and global brands</strong> — known for delivering end-to-end production management, visual storytelling, and seamless client liaison.</p>
-      <p>Adept at managing pre- to post-production workflows, on-ground execution, and cross-functional team coordination in fast-paced, multicultural environments. Holds an <strong>M.A. in Mass Communication & Filmmaking</strong> from AJK MCRC, Jamia Millia Islamia.</p>
-      <p>Recognised by the <strong>Youth Ki Awaz Citizen Journalist Fellowship</strong> and supported by <strong>UNDP</strong> through the Asia Pacific Youth Exchange Program. Former Sub-Editor at <strong>The Indian Express</strong>.</p>
-      <p style="margin-top:0.5rem;"><a href="https://www.behance.net/basitkhan58" target="_blank" style="color: var(--gold-light); text-decoration: none;">Behance Portfolio ↗</a></p>
+      <p>Adept at managing pre- to post-production workflows, on-ground execution, and cross-functional team coordination in fast-paced, multicultural environments.</p>
     </div>
     <div class="about-highlights">
       <div class="highlight-item">
-        <h4 class="highlight-title">Producer — Basit Latif Khan</h4>
-        <p class="highlight-sub">End-to-end production management, client liaison, documentary filmmaking, and large-scale event coverage across India and internationally.</p>
+        <h4 class="highlight-title">Basit Khan</h4>
       </div>
       <div class="highlight-item">
-        <h4 class="highlight-title">Director of Photography — Tjay</h4>
-        <p class="highlight-sub">Cinematography and visual direction for brand films, event coverage, and commercial productions. DOP on all Brand & Event Films.</p>
-      </div>
-      <div class="highlight-item">
-        <h4 class="highlight-title">Skills</h4>
-        <p class="highlight-sub">Photography · Cinematography · Sound Recording & Editing · Video Editing · Creative Production · Client Management · Event Management</p>
-      </div>
-      <div class="highlight-item">
-        <h4 class="highlight-title">Tools</h4>
-        <p class="highlight-sub">Adobe Premiere Pro · Adobe Lightroom · Final Cut Pro · Nuendo</p>
+        <h4 class="highlight-title">TJ</h4>
       </div>
     </div>
   </div>
@@ -966,22 +1032,19 @@
     <div class="section-line"></div>
   </div>
   <div class="contact-inner">
-    <p class="contact-desc">Based in New Delhi. Available for documentary, brand, and cultural film projects across India and internationally.</p>
     <div class="contact-links">
       <a class="contact-link" href="mailto:Basitlk98@gmail.com">
-        <span>Basitlk98@gmail.com</span>
+        <span style="display:flex;align-items:center;gap:0.6rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Basitlk98@gmail.com
+        </span>
         <span>↗</span>
       </a>
       <a class="contact-link" href="tel:+917889379159">
-        <span>+91 78893 79159</span>
-        <span>↗</span>
-      </a>
-      <a class="contact-link" href="https://www.behance.net/basitkhan58" target="_blank">
-        <span>Behance Portfolio</span>
-        <span>↗</span>
-      </a>
-      <a class="contact-link" href="https://docs.google.com/document/d/1t7hH-MGhwRaXIHwxefaOBz4X6LMLCs6G/edit" target="_blank">
-        <span>Journalism &amp; Media Coverage</span>
+        <span style="display:flex;align-items:center;gap:0.6rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 78893 79159
+        </span>
         <span>↗</span>
       </a>
     </div>
