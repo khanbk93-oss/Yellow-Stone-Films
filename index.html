@@ -44,9 +44,6 @@
   }
 
   .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem;
     font-weight: 400;
@@ -55,8 +52,6 @@
     text-transform: uppercase;
     text-decoration: none;
   }
-
-  .nav-logo-img { height: 40px; width: auto; display: block; }
 
   .nav-links {
     display: flex;
@@ -93,6 +88,14 @@
       radial-gradient(ellipse 60% 50% at 80% 40%, rgba(184,150,90,0.06) 0%, transparent 60%),
       radial-gradient(ellipse 40% 60% at 20% 70%, rgba(184,150,90,0.04) 0%, transparent 50%);
     pointer-events: none;
+  }
+
+  .hero-logo {
+    height: 180px;
+    width: auto;
+    align-self: flex-start;
+    margin-bottom: 2.5rem;
+    position: relative;
   }
 
   .hero-eyebrow {
@@ -466,6 +469,7 @@
     nav { padding: 1.25rem 1.5rem; }
     .nav-links { display: none; }
     .hero { padding: 0 1.5rem 4rem; }
+    .hero-logo { height: 120px; margin-bottom: 2rem; }
     section { padding: 4rem 1.5rem; }
     .hero-stats { gap: 2rem; }
     .projects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -482,7 +486,7 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo"><img src="yellowstone-logo-gold.svg" alt="" class="nav-logo-img"><span>Yellowstone Films</span></a>
+  <a href="#" class="nav-logo">Yellowstone Films</a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#brand-films">Films</a></li>
@@ -532,6 +536,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <img src="yellowstone-logo-gold.svg" alt="Yellowstone Films" class="hero-logo">
   <p class="hero-eyebrow">Yellowstone Films · New Delhi</p>
   <h1 class="hero-title">Stories<br>told with <em>intent</em></h1>
   <p class="hero-sub">Films, documentaries, brand stories, and art — crafted for directors, institutions, and brands that care about the frame.</p>
