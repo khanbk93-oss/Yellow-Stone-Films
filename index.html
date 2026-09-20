@@ -44,6 +44,9 @@
   }
 
   .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem;
     font-weight: 400;
@@ -52,6 +55,8 @@
     text-transform: uppercase;
     text-decoration: none;
   }
+
+  .nav-logo-img { height: 40px; width: auto; display: block; }
 
   .nav-links {
     display: flex;
@@ -477,7 +482,7 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Yellowstone Films</a>
+  <a href="#" class="nav-logo"><img src="yellowstone-logo-gold.svg" alt="" class="nav-logo-img"><span>Yellowstone Films</span></a>
   <ul class="nav-links">
     <li><a href="#work">Work</a></li>
     <li><a href="#brand-films">Films</a></li>
