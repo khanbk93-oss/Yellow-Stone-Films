@@ -582,6 +582,30 @@ top: 1.5rem;
       </div>
     </a>
 
+    <!-- BRICS -->
+    <div class="project-card" id="brics-card">
+      <div id="brics-stage" style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:#fff;">
+        <img id="brics-cover" src="images/brics-cover.png" alt="BRICS" style="width:100%;height:100%;object-fit:contain;display:block;cursor:pointer;" onclick="bricsPlay('videos/brics-after-movie.mp4')">
+        <video id="brics-video" controls playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:none;"></video>
+      </div>
+      <span class="project-card-tag">Event Film / Production</span>
+      <h3 class="project-card-title">BRICS — Ministry of Education</h3>
+      <p class="project-card-desc">Produced and directed the event coverage for BRICS — a team of photographers, videographers and an editor, from pre-production to final delivery.</p>
+      <div style="display:flex;gap:1rem;margin-top:0.5rem;">
+        <a href="#" onclick="return bricsPlay('videos/brics-after-movie.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ After Movie</a>
+        <a href="#" onclick="return bricsPlay('videos/brics-reel-1.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ Reel 01</a>
+        <a href="#" onclick="return bricsPlay('videos/brics-reel-2.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ Reel 02</a>
+        <a href="#" onclick="return bricsPlay('videos/brics-reel-3.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ Reel 03</a>
+      </div>
+    </div>
+    <script>
+      function bricsPlay(src){
+        var v=document.getElementById('brics-video'), c=document.getElementById('brics-cover');
+        c.style.display='none'; v.style.display='block';
+        v.src=src; v.load(); v.play();
+        return false;
+      }
+    </script>
 
   </div>
 
