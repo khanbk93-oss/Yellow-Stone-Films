@@ -576,6 +576,7 @@ top: 1.5rem;
     .fw-slide::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.35) 55%,rgba(10,10,10,.05))}
     .fw-s1{--fw-bg:url(images/wim-wenders.jpg)}
     .fw-s2{--fw-bg:url(images/brics-cover.png)}
+    .fw-s3{--fw-bg:url(images/kinaare-thumb.jpg)}
     .fw-s2::after{background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.55) 55%,rgba(10,10,10,.4))}
     .fw-copy{position:relative;z-index:2;max-width:560px;opacity:0;transform:translateX(-40px);transition:all .5s .1s}
     .fw-slide.fw-on .fw-copy{opacity:1;transform:none}
@@ -592,7 +593,9 @@ top: 1.5rem;
     .fw-badge svg{width:100%;height:100%;animation:fwspin 18s linear infinite}
     .fw-badge::after{content:"\25B6";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#e6c88f;font-size:1.6rem;padding-left:.3rem}
     @keyframes fwspin{to{transform:rotate(360deg)}}
-    .fw-s1 .fw-badge{right:6%}
+    .fw-s1 .fw-badge,.fw-s3 .fw-badge{right:6%}
+    .fw-static{cursor:default}
+    .fw-static::after{display:none}
     .fw-s2 .fw-copy{max-width:none;width:100%}
     .fw-s2 .fw-h,.fw-s2 .fw-links{max-width:560px}
     .fw-s2 .fw-badge{right:-4.5%;top:calc(1.7rem + clamp(2.4rem,6vw,5.4rem)*.475);width:min(170px,16vw)}
@@ -653,6 +656,16 @@ top: 1.5rem;
         </div>
         <video class="fw-video" id="brics-video" controls playsinline preload="none"></video>
         <button class="fw-close" id="brics-close" aria-label="Close video">&#10005;</button>
+      </div>
+
+      <!-- Kinaare -->
+      <div class="fw-slide fw-s3">
+        <div class="fw-copy">
+          <div class="fw-kicker">Feature Film / Behind the Scenes</div>
+          <h3 class="fw-h">Kinaare <span>Behind the Scenes</span></h3>
+          <p class="fw-sub">Behind-the-scenes photography on the feature film Kinaare, directed by Akbar Azam Qadri.</p>
+        </div>
+        <div class="fw-badge fw-static"><svg viewBox="0 0 200 200"><text fill="#e6c88f" font-size="16" font-weight="600" letter-spacing="4.5" font-family="Inter,sans-serif"><textPath href="#fwc">YELLOWSTONE FILMS &#8226; NEW DELHI &#8226; </textPath></text></svg></div>
       </div>
 
     </div>
