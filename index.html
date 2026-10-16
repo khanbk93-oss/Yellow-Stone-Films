@@ -1271,5 +1271,14 @@ function hz(n,a){
   return false;
 }
 </script>
+<style>
+  .fw-slider{height:min(72vh,560px);min-height:380px}
+  .fw-h{font-size:clamp(1.6rem,6vw,86px)}
+  .fw-s2 .fw-badge{top:calc(1.7rem + clamp(1.6rem,6vw,86px)*.475);width:min(170px,20vw)}
+  .fw-slide::before{background-position:center 30%}
+  @media(max-width:700px){
+    .fw-slider{height:min(72vh,560px);min-height:420px}
+  }
+</style>
 </body>
 </html>
