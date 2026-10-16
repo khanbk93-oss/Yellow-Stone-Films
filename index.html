@@ -565,51 +565,131 @@ top: 1.5rem;
     <div class="section-line"></div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:1.5rem;">
+  <style>
+    .fw-slider{position:relative;overflow:hidden;height:min(72vh,560px);min-height:420px;user-select:none;-webkit-user-select:none;background:var(--black)}
+    .fw-rail{display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;cursor:grab}
+    .fw-rail::-webkit-scrollbar{display:none}
+    .fw-rail.fw-drag{scroll-snap-type:none;cursor:grabbing}
+    .fw-slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;display:flex;align-items:center;padding:0 6%;overflow:hidden}
+    .fw-slide::before{content:"";position:absolute;inset:0;background:var(--fw-bg) center/cover no-repeat;z-index:0;transform:scale(1.06);transition:transform 6s ease-out}
+    .fw-slide.fw-on::before{transform:scale(1)}
+    .fw-slide::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.35) 55%,rgba(10,10,10,.05))}
+    .fw-s1{--fw-bg:url(images/wim-wenders.jpg)}
+    .fw-s2{--fw-bg:url(images/brics-cover.png)}
+    .fw-s2::after{background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.55) 55%,rgba(10,10,10,.4))}
+    .fw-copy{position:relative;z-index:2;max-width:560px;opacity:0;transform:translateX(-40px);transition:all .5s .1s}
+    .fw-slide.fw-on .fw-copy{opacity:1;transform:none}
+    .fw-kicker{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+    .fw-h{font-family:'Cormorant Garamond',serif;font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(2.4rem,6vw,5.4rem);color:var(--white)}
+    .fw-h span{display:block;color:var(--gold-light);font-style:italic}
+    .fw-sub{font-family:'Inter',sans-serif;font-weight:300;font-size:.95rem;line-height:1.65;color:rgba(245,242,238,.78);margin:1.2rem 0 1.4rem;max-width:440px}
+    .fw-btn{display:inline-block;padding:.8rem 1.7rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:.25s}
+    .fw-btn:hover{background:var(--gold);color:var(--black)}
+    .fw-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:1.1rem}
+    .fw-links a{font-family:'Inter',sans-serif;font-size:.7rem;color:var(--gold);text-decoration:none}
+    .fw-links a:hover{color:var(--gold-light)}
+    .fw-badge{position:absolute;z-index:2;right:2%;top:50%;width:min(170px,22%);aspect-ratio:1;transform:translateY(-50%);cursor:pointer;text-decoration:none;display:block;filter:drop-shadow(0 0 3px rgba(0,0,0,.9)) drop-shadow(0 0 10px rgba(0,0,0,.55))}
+    .fw-badge svg{width:100%;height:100%;animation:fwspin 18s linear infinite}
+    .fw-badge::after{content:"\25B6";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#e6c88f;font-size:1.6rem;padding-left:.3rem}
+    @keyframes fwspin{to{transform:rotate(360deg)}}
+    .fw-s1 .fw-badge{right:6%}
+    .fw-s2 .fw-copy{max-width:none;width:100%}
+    .fw-s2 .fw-h,.fw-s2 .fw-links{max-width:560px}
+    .fw-s2 .fw-badge{right:-4.5%;top:calc(1.7rem + clamp(2.4rem,6vw,5.4rem)*.475);width:min(170px,16vw)}
+    .fw-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:5;display:none}
+    .fw-close{position:absolute;z-index:6;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.55);color:#fff;font-size:16px;cursor:pointer;display:none}
+    .fw-nav{position:absolute;z-index:3;left:6%;bottom:22px;display:flex;gap:8px}
+    .fw-nav i{width:28px;height:2px;background:rgba(255,255,255,.25);cursor:pointer;transition:.3s}
+    .fw-nav i.fw-on{background:var(--gold);width:48px}
+    .fw-arr{position:absolute;z-index:3;right:4%;bottom:16px;display:flex;gap:10px}
+    .fw-arr button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:var(--white);font-size:17px;cursor:pointer;transition:.2s}
+    .fw-arr button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+    @media(max-width:700px){
+      .fw-slider{height:auto;min-height:0;aspect-ratio:auto;height:560px}
+      .fw-slide{align-items:flex-end;padding:0 6% 80px}
+      .fw-slide::after{background:linear-gradient(0deg,rgba(10,10,10,.92),rgba(10,10,10,.25))}
+      .fw-badge{display:none}
+      .fw-arr{display:none}
+    }
+  </style>
 
-    <!-- Wim Wenders -->
-    <a class="project-card" href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank">
-      <div class="featured-img" style="width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:rgba(184,150,90,0.08);">
-        <img src="images/wim-wenders.jpg" alt="Wim Wenders India Tour" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
-      </div>
-      <span class="project-card-tag">Documentary / Direction</span>
-      <h3 class="project-card-title">Wim Wenders — Delhi Tour Shoot</h3>
-      <p class="project-card-desc">Behind-the-lens documentation of Oscar-nominated German director Wim Wenders during his tour of Delhi.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1rem;margin-top:0.5rem;" onclick="event.stopPropagation()">
-        <a href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ 01</a>
-        <a href="https://www.instagram.com/reel/DGah7TtIl8_/?igsh=NXplZWFrdmR2NHM=" target="_blank" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ 02</a>
-        <a href="https://www.instagram.com/reel/DGWAp9NoHwJ/?igsh=emQzM3oweHE3anU2" target="_blank" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ 03</a>
-      </div>
-    </a>
+  <div class="fw-slider" id="fwSlider">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><path id="fwc" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs></svg>
+    <div class="fw-rail" id="fwRail">
 
-    <!-- BRICS -->
-    <div class="project-card" id="brics-card">
-      <div id="brics-stage" style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;margin-bottom:0.75rem;background:#fff;">
-        <img id="brics-cover" src="images/brics-cover.png" alt="BRICS" style="width:100%;height:100%;object-fit:contain;display:block;cursor:pointer;" onclick="bricsPlay('videos/brics-after-movie.mp4')">
-        <video id="brics-video" controls playsinline preload="none" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;display:none;"></video>
+      <!-- Wim Wenders -->
+      <div class="fw-slide fw-s1 fw-on">
+        <div class="fw-copy">
+          <div class="fw-kicker">Documentary / Direction</div>
+          <h3 class="fw-h">Wim Wenders <span>Delhi Tour Shoot</span></h3>
+          <p class="fw-sub">Behind-the-lens documentation of Oscar-nominated German director Wim Wenders during his tour of Delhi.</p>
+          <a class="fw-btn" href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank">Watch reel</a>
+          <div class="fw-links">
+            <a href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank">&#8599; 01</a>
+            <a href="https://www.instagram.com/reel/DGah7TtIl8_/?igsh=NXplZWFrdmR2NHM=" target="_blank">&#8599; 02</a>
+            <a href="https://www.instagram.com/reel/DGWAp9NoHwJ/?igsh=emQzM3oweHE3anU2" target="_blank">&#8599; 03</a>
+          </div>
+        </div>
+        <a class="fw-badge" href="https://www.instagram.com/reel/DGami97yrIo/?igsh=OHc5eXpuZ281d21i" target="_blank" aria-label="Watch Wim Wenders reel"><svg viewBox="0 0 200 200"><text fill="#e6c88f" font-size="16" font-weight="600" letter-spacing="4.5" font-family="Inter,sans-serif"><textPath href="#fwc">YELLOWSTONE FILMS &#8226; NEW DELHI &#8226; </textPath></text></svg></a>
       </div>
-      <span class="project-card-tag">Event Film / Production</span>
-      <h3 class="project-card-title">BRICS — Ministry of Education</h3>
-      <p class="project-card-desc">Produced and directed the event coverage for BRICS — a team of photographers, videographers and an editor, from pre-production to final delivery.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.5rem 1rem;margin-top:0.5rem;">
-        <a href="#" onclick="return bricsPlay('videos/brics-after-movie.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ After Movie</a>
-        <a href="#" onclick="return bricsPlay('videos/brics-reel-1.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ Reel 01</a>
-        <a href="#" onclick="return bricsPlay('videos/brics-reel-2.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ Reel 02</a>
-        <a href="#" onclick="return bricsPlay('videos/brics-reel-3.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">↗ Reel 03</a><a href="#" onclick="return bricsPlay('videos/brics-reel-4.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">&#8599; Reel 04</a>
-<a href="#" onclick="return bricsPlay('videos/brics-reel-5.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">&#8599; Reel 05</a>
-<a href="#" onclick="return bricsPlay('videos/brics-reel-6.mp4')" style="font-size:0.7rem;color:var(--gold);text-decoration:none;">&#8599; Reel 06</a>
+
+      <!-- BRICS -->
+      <div class="fw-slide fw-s2" id="brics-card">
+        <div class="fw-copy">
+          <div class="fw-kicker">Event Film / Production</div>
+          <h3 class="fw-h">BRICS <span>Ministry of Education</span></h3>
+          <p class="fw-sub">Produced and directed the event coverage for BRICS &mdash; a team of photographers, videographers and an editor, from pre-production to final delivery.</p>
+          <a class="fw-btn" href="#" onclick="return bricsPlay('videos/brics-after-movie.mp4')">Watch after movie</a>
+          <div class="fw-links">
+            <a href="#" onclick="return bricsPlay('videos/brics-after-movie.mp4')">&#8599; After Movie</a>
+            <a href="#" onclick="return bricsPlay('videos/brics-reel-1.mp4')">&#8599; Reel 01</a>
+            <a href="#" onclick="return bricsPlay('videos/brics-reel-2.mp4')">&#8599; Reel 02</a>
+            <a href="#" onclick="return bricsPlay('videos/brics-reel-3.mp4')">&#8599; Reel 03</a>
+            <a href="#" onclick="return bricsPlay('videos/brics-reel-4.mp4')">&#8599; Reel 04</a>
+            <a href="#" onclick="return bricsPlay('videos/brics-reel-5.mp4')">&#8599; Reel 05</a>
+            <a href="#" onclick="return bricsPlay('videos/brics-reel-6.mp4')">&#8599; Reel 06</a>
+          </div>
+          <a class="fw-badge" href="#" onclick="return bricsPlay('videos/brics-after-movie.mp4')" aria-label="Play BRICS after movie"><svg viewBox="0 0 200 200"><text fill="#e6c88f" font-size="16" font-weight="600" letter-spacing="4.5" font-family="Inter,sans-serif"><textPath href="#fwc">YELLOWSTONE FILMS &#8226; NEW DELHI &#8226; </textPath></text></svg></a>
+        </div>
+        <video class="fw-video" id="brics-video" controls playsinline preload="none"></video>
+        <button class="fw-close" id="brics-close" aria-label="Close video">&#10005;</button>
       </div>
+
     </div>
-    <script>
-      function bricsPlay(src){
-        var v=document.getElementById('brics-video'), c=document.getElementById('brics-cover');
-        c.style.display='none'; v.style.display='block';
-        v.src=src; v.load(); v.play();
-        return false;
-      }
-    </script>
-
+    <div class="fw-nav" id="fwDots"></div>
+    <div class="fw-arr"><button id="fwPrev" aria-label="Previous">&larr;</button><button id="fwNext" aria-label="Next">&rarr;</button></div>
   </div>
+
+  <script>
+  (function(){
+    var rail=document.getElementById('fwRail'),slides=[].slice.call(rail.children),dots=document.getElementById('fwDots'),
+        video=document.getElementById('brics-video'),closeBtn=document.getElementById('brics-close'),
+        i=0,timer,wt,dragging=false,sx=0,sl=0,hold=false,vis=true;
+    slides.forEach(function(_,n){var d=document.createElement('i');d.onclick=function(){go(n)};dots.appendChild(d)});
+    function mark(n){i=n;slides.forEach(function(s,k){s.classList.toggle('fw-on',k===i)});[].slice.call(dots.children).forEach(function(d,k){d.classList.toggle('fw-on',k===i)})}
+    function auto(){clearTimeout(timer);if(hold||!vis)return;timer=setTimeout(function(){go(i===slides.length-1?0:i+1)},3000)}
+    function go(n){n=Math.max(0,Math.min(slides.length-1,n));rail.scrollTo({left:n*rail.clientWidth,behavior:'smooth'});mark(n);auto()}
+    document.getElementById('fwNext').onclick=function(){go(i+1)};
+    document.getElementById('fwPrev').onclick=function(){go(i-1)};
+    rail.addEventListener('scroll',function(){if(dragging)return;var n=Math.round(rail.scrollLeft/rail.clientWidth);if(n!==i){mark(n);auto()}},{passive:true});
+    rail.addEventListener('touchstart',function(){clearTimeout(timer)},{passive:true});
+    rail.addEventListener('touchend',auto,{passive:true});
+    rail.addEventListener('wheel',function(){clearTimeout(timer);clearTimeout(wt);wt=setTimeout(auto,900)},{passive:true});
+    rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('button,a,video,.fw-badge,.fw-nav'))return;dragging=true;sx=e.clientX;sl=rail.scrollLeft;rail.classList.add('fw-drag');clearTimeout(timer)});
+    window.addEventListener('pointermove',function(e){if(dragging)rail.scrollLeft=sl-(e.clientX-sx)});
+    window.addEventListener('pointerup',function(e){if(!dragging)return;dragging=false;rail.classList.remove('fw-drag');var d=e.clientX-sx;go(d<-40?i+1:d>40?i-1:i)});
+    rail.addEventListener('dragstart',function(e){e.preventDefault()});
+    window.addEventListener('resize',function(){rail.scrollTo({left:i*rail.clientWidth,behavior:'auto'})});
+    if('IntersectionObserver' in window){new IntersectionObserver(function(en){vis=en[0].isIntersecting;vis?auto():clearTimeout(timer)},{threshold:.3}).observe(document.getElementById('fwSlider'))}
+    window.bricsPlay=function(src){
+      hold=true;clearTimeout(timer);
+      video.style.display='block';closeBtn.style.display='block';
+      video.src=src;video.load();video.play();return false;
+    };
+    closeBtn.onclick=function(){video.pause();video.removeAttribute('src');video.load();video.style.display='none';closeBtn.style.display='none';hold=false;auto()};
+    mark(0);auto();
+  })();
+  </script>
 
 </section>
 
