@@ -566,12 +566,12 @@ top: 1.5rem;
   </div>
 
   <style>
-    .fw-slider{position:relative;overflow:hidden;height:clamp(380px,60vh,430px);min-height:380px;user-select:none;-webkit-user-select:none;background:var(--black)}
+    .fw-slider{position:relative;overflow:hidden;height:min(72vh,560px);min-height:380px;user-select:none;-webkit-user-select:none;background:var(--black)}
     .fw-rail{display:flex;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;cursor:grab}
     .fw-rail::-webkit-scrollbar{display:none}
     .fw-rail.fw-drag{scroll-snap-type:none;cursor:grabbing}
     .fw-slide{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;position:relative;display:flex;align-items:center;padding:0 6%;overflow:hidden}
-    .fw-slide::before{content:"";position:absolute;inset:0;background:var(--fw-bg) center/cover no-repeat;z-index:0;transform:scale(1.06);transition:transform 6s ease-out}
+    .fw-slide::before{content:"";position:absolute;inset:0;background:var(--fw-bg) center 30%/cover no-repeat;z-index:0;transform:scale(1.06);transition:transform 6s ease-out}
     .fw-slide.fw-on::before{transform:scale(1)}
     .fw-slide::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.35) 55%,rgba(10,10,10,.05))}
     .fw-s1{--fw-bg:url(images/wim-wenders.jpg)}
@@ -581,7 +581,7 @@ top: 1.5rem;
     .fw-copy{position:relative;z-index:2;max-width:560px;opacity:0;transform:translateX(-40px);transition:all .5s .1s}
     .fw-slide.fw-on .fw-copy{opacity:1;transform:none}
     .fw-kicker{font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
-    .fw-h{font-family:'Cormorant Garamond',serif;font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(2rem,5.5vw,3rem);color:var(--white)}
+    .fw-h{font-family:'Cormorant Garamond',serif;font-weight:400;text-transform:uppercase;line-height:.95;font-size:clamp(1.6rem,6vw,86px);color:var(--white)}
     .fw-h span{display:block;color:var(--gold-light);font-style:italic}
     .fw-sub{font-family:'Inter',sans-serif;font-weight:300;font-size:.95rem;line-height:1.65;color:rgba(245,242,238,.78);margin:1.2rem 0 1.4rem;max-width:440px}
     .fw-btn{display:inline-block;padding:.8rem 1.7rem;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-family:'Inter',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;transition:.25s}
@@ -598,7 +598,7 @@ top: 1.5rem;
     .fw-static::after{display:none}
     .fw-s2 .fw-copy{max-width:none;width:100%}
     .fw-s2 .fw-h,.fw-s2 .fw-links{max-width:560px}
-    .fw-s2 .fw-badge{right:-4.5%;top:calc(1.7rem + clamp(2rem,5.5vw,3rem)*.475);width:min(130px,16vw)}
+    .fw-s2 .fw-badge{right:-4.5%;top:calc(1.7rem + clamp(1.6rem,6vw,86px)*.475);width:min(170px,20vw)}
     .fw-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:5;display:none}
     .fw-close{position:absolute;z-index:6;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.55);color:#fff;font-size:16px;cursor:pointer;display:none}
     .fw-nav{position:absolute;z-index:3;left:6%;bottom:22px;display:flex;gap:8px}
@@ -608,7 +608,7 @@ top: 1.5rem;
     .fw-arr button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:var(--white);font-size:17px;cursor:pointer;transition:.2s}
     .fw-arr button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
     @media(max-width:700px){
-      .fw-slider{height:auto;min-height:0;aspect-ratio:auto;height:560px}
+      .fw-slider{height:min(72vh,560px);min-height:420px}
       .fw-slide{align-items:flex-end;padding:0 6% 80px}
       .fw-slide::after{background:linear-gradient(0deg,rgba(10,10,10,.92),rgba(10,10,10,.25))}
       .fw-badge{display:none}
@@ -664,6 +664,7 @@ top: 1.5rem;
           <div class="fw-kicker">Feature Film / Behind the Scenes</div>
           <h3 class="fw-h">Kinaare <span>Behind the Scenes</span></h3>
           <p class="fw-sub">Behind-the-scenes photography on the feature film Kinaare, directed by Akbar Azam Qadri.</p>
+          <button class="fw-btn k-open" type="button" onclick="kOpen()" id="kBtn" style="display:none">View photos</button>
         </div>
         <div class="fw-badge fw-static"><svg viewBox="0 0 200 200"><text fill="#e6c88f" font-size="16" font-weight="600" letter-spacing="4.5" font-family="Inter,sans-serif"><textPath href="#fwc">YELLOWSTONE FILMS &#8226; NEW DELHI &#8226; </textPath></text></svg></div>
       </div>
@@ -1271,14 +1272,53 @@ function hz(n,a){
   return false;
 }
 </script>
+
+<!-- KINAARE PHOTO GALLERY (reads kphotos.js) -->
 <style>
-  .fw-slider{height:min(72vh,560px);min-height:380px}
-  .fw-h{font-size:clamp(1.6rem,6vw,86px)}
-  .fw-s2 .fw-badge{top:calc(1.7rem + clamp(1.6rem,6vw,86px)*.475);width:min(170px,20vw)}
-  .fw-slide::before{background-position:center 30%}
-  @media(max-width:700px){
-    .fw-slider{height:min(72vh,560px);min-height:420px}
-  }
+  button.fw-btn{background:none;cursor:pointer;font-weight:300}
+  #kGal{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.97);overflow-y:auto;padding:5rem 4rem 4rem;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+  #kGal.on{opacity:1;visibility:visible}
+  .k-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2.5rem;padding-bottom:1.2rem;border-bottom:.5px solid var(--border)}
+  .k-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,3vw,2.8rem);letter-spacing:.02em;line-height:1.1}
+  .k-title span{display:block;font-family:'Inter',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .k-close{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:var(--white);font-size:20px;line-height:1;cursor:pointer;transition:.2s}
+  .k-close:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+  .k-grid{columns:3 280px;column-gap:14px}
+  .k-grid img{width:100%;display:block;margin-bottom:14px;border:.5px solid var(--border);cursor:zoom-in;break-inside:avoid;transition:border-color .25s,filter .35s;filter:brightness(.88)}
+  .k-grid img:hover{border-color:var(--gold);filter:brightness(1)}
+  #kBig{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+  #kBig.on{display:flex}
+  #kBig img{max-width:100%;max-height:100%;object-fit:contain;border:.5px solid var(--border)}
+  @media(max-width:900px){#kGal{padding:4.5rem 1.5rem 3rem}.k-grid{columns:2 160px}}
+  @media(max-width:520px){.k-grid{columns:1}}
 </style>
+<div id="kGal" aria-hidden="true">
+  <div class="k-head">
+    <h3 class="k-title"><span>Feature Film / Behind the Scenes</span>Kinaare</h3>
+    <button class="k-close" type="button" onclick="kClose()" aria-label="Close gallery">&times;</button>
+  </div>
+  <div class="k-grid" id="kGrid"></div>
+</div>
+<div id="kBig"><img alt=""></div>
+<script src="kphotos.js"></script>
+<script>
+(function(){
+  var list = (typeof KPHOTOS !== 'undefined' && KPHOTOS.length) ? KPHOTOS : [];
+  var grid = document.getElementById('kGrid'), gal = document.getElementById('kGal'), big = document.getElementById('kBig');
+  if (!list.length) return;
+  document.getElementById('kBtn').style.display = 'inline-block';
+  list.forEach(function(src, n){
+    var im = document.createElement('img');
+    im.src = src; im.loading = 'lazy'; im.alt = 'Kinaare behind the scenes ' + (n + 1);
+    grid.appendChild(im);
+  });
+  window.kOpen = function(){ gal.classList.add('on'); document.body.style.overflow = 'hidden'; };
+  window.kClose = function(){ gal.classList.remove('on'); document.body.style.overflow = ''; };
+  grid.addEventListener('click', function(e){ if (e.target.tagName === 'IMG'){ big.querySelector('img').src = e.target.src; big.classList.add('on'); } });
+  big.addEventListener('click', function(){ big.classList.remove('on'); });
+  document.addEventListener('keydown', function(e){ if (e.key !== 'Escape') return; if (big.classList.contains('on')) big.classList.remove('on'); else kClose(); });
+})();
+</script>
+
 </body>
 </html>
