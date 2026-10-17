@@ -1329,5 +1329,30 @@ function hz(n,a){
 <style id="fw-brics-badge">
   .fw-s2 .fw-badge{top:62%;right:-3%;transform:translateY(-50%);width:min(170px,20vw)}
 </style>
+<style id="fw-mobile-final">
+  @media(max-width:700px){
+    .fw-slider{height:auto;min-height:0}
+    .fw-rail{height:auto}
+    .fw-slide{flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0 0 64px}
+    .fw-slide::before{position:relative;inset:auto;flex:none;width:100%;aspect-ratio:16/9;transform:none;transition:none;background-position:center 30%}
+    .fw-slide::after{display:none}
+    .fw-copy{max-width:none;width:100%;padding:1.25rem 6% 0;opacity:1 !important;transform:none !important}
+    .fw-kicker{margin-bottom:.5rem}
+    .fw-h{font-size:clamp(1.4rem,7vw,2rem)}
+    .fw-sub{display:block;font-size:.85rem;line-height:1.55;margin:.8rem 0 1rem;max-width:none}
+    .fw-btn{padding:.65rem 1.3rem}
+    .fw-links{margin-top:.9rem;gap:.4rem .9rem}
+    .fw-video{inset:0 0 auto 0;height:auto;aspect-ratio:16/9}
+    .fw-nav{bottom:24px}
+  }
+</style>
+<style id="fw-mobile-badge">
+  @media(max-width:700px){
+    #work{padding:3rem 1.5rem !important}
+    .fw-copy{position:static}
+    .fw-slide .fw-badge,.fw-s1 .fw-badge,.fw-s2 .fw-badge,.fw-s3 .fw-badge{display:block !important;top:12px !important;right:12px !important;left:auto !important;bottom:auto !important;transform:none !important;width:84px !important}
+    .fw-badge::after{font-size:1.1rem}
+  }
+</style>
 </body>
 </html>
