@@ -681,7 +681,7 @@ top: 1.5rem;
         i=0,timer,wt,dragging=false,sx=0,sl=0,hold=false,vis=true;
     slides.forEach(function(_,n){var d=document.createElement('i');d.onclick=function(){go(n)};dots.appendChild(d)});
     function mark(n){i=n;slides.forEach(function(s,k){s.classList.toggle('fw-on',k===i)});[].slice.call(dots.children).forEach(function(d,k){d.classList.toggle('fw-on',k===i)})}
-    function auto(){clearTimeout(timer);if(hold||!vis)return;timer=setTimeout(function(){go(i===slides.length-1?0:i+1)},3000)}
+    function auto(){clearTimeout(timer);if(hold||!vis)return;timer=setTimeout(function(){go(i===slides.length-1?0:i+1)},2000)}
     function go(n){n=Math.max(0,Math.min(slides.length-1,n));rail.scrollTo({left:n*rail.clientWidth,behavior:'smooth'});mark(n);auto()}
     document.getElementById('fwNext').onclick=function(){go(i+1)};
     document.getElementById('fwPrev').onclick=function(){go(i-1)};
