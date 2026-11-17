@@ -577,6 +577,9 @@ top: 1.5rem;
     .fw-s1{--fw-bg:url(images/wim-wenders.jpg)}
     .fw-s2{--fw-bg:url(images/brics-cover.png)}
     .fw-s3{--fw-bg:url(images/kinaare-thumb.jpg)}
+    .fw-s4{--fw-bg:url(images/fankaara-thumb.jpg)}
+    .fw-s4 .fw-badge{right:6%}
+    @media(max-width:700px){.fw-slider .fw-s4::before{background-position:right center}}
     .fw-s2::after{background:linear-gradient(90deg,rgba(10,10,10,.88),rgba(10,10,10,.55) 55%,rgba(10,10,10,.4))}
     .fw-copy{position:relative;z-index:2;max-width:560px;opacity:0;transform:translateX(-40px);transition:all .5s .1s}
     .fw-slide.fw-on .fw-copy{opacity:1;transform:none}
@@ -667,6 +670,17 @@ top: 1.5rem;
           <button class="fw-btn k-open" type="button" onclick="kOpen()" id="kBtn" style="display:none">View photos</button>
         </div>
         <div class="fw-badge fw-static"><svg viewBox="0 0 200 200"><text fill="#e6c88f" font-size="16" font-weight="600" letter-spacing="4.5" font-family="Inter,sans-serif"><textPath href="#fwc">YELLOWSTONE FILMS &#8226; NEW DELHI &#8226; </textPath></text></svg></div>
+      </div>
+
+      <!-- Bazme Naaz -->
+      <div class="fw-slide fw-s4">
+        <div class="fw-copy">
+          <div class="fw-kicker">Event Film / Production</div>
+          <h3 class="fw-h">Bazme Naaz <span>An Evening of Poetry</span></h3>
+          <p class="fw-sub">Women poets came together for an evening of poetry, courage, and applause at Godavari Auditorium, Delhi. Produced and shot by us at Yellowstone Films. Every ticket supported Brave Souls Foundation and acid attack survivors.</p>
+          <a class="fw-btn" href="https://www.instagram.com/reel/DfxUNTlvi6F/" target="_blank">Watch reel</a>
+        </div>
+        <a class="fw-badge" href="https://www.instagram.com/reel/DfxUNTlvi6F/" target="_blank" aria-label="Watch Bazme Naaz reel"><svg viewBox="0 0 200 200"><text fill="#e6c88f" font-size="16" font-weight="600" letter-spacing="4.5" font-family="Inter,sans-serif"><textPath href="#fwc">YELLOWSTONE FILMS &#8226; NEW DELHI &#8226; </textPath></text></svg></a>
       </div>
 
     </div>
